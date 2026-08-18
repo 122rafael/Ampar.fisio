@@ -251,6 +251,52 @@
   }
   .btn-val-brand-light{font-weight:300;color:rgba(255,255,255,0.75);}
 
+
+  /* ── SHARE MODAL ── */
+  .share-modal-overlay{
+    position:fixed;inset:0;z-index:9999;
+    background:rgba(0,0,0,0.55);backdrop-filter:blur(6px);
+    display:flex;align-items:flex-end;justify-content:center;
+    padding:1rem;
+    opacity:0;pointer-events:none;
+    transition:opacity 0.25s ease;
+  }
+  .share-modal-overlay.open{opacity:1;pointer-events:all;}
+
+  .share-modal-box{
+    background:var(--white);
+    border-radius:20px 20px 16px 16px;
+    padding:1.8rem 1.5rem 1.5rem;
+    width:100%;max-width:400px;
+    box-shadow:0 -8px 40px rgba(0,0,0,0.2);
+    transform:translateY(20px);
+    transition:transform 0.3s ease;
+  }
+  .share-modal-overlay.open .share-modal-box{transform:translateY(0);}
+
+  .share-modal-title{
+    font-family:'Playfair Display',serif;
+    font-size:1.15rem;font-weight:700;
+    color:var(--forest);text-align:center;margin-bottom:0.3rem;
+  }
+  .share-modal-sub{
+    font-size:0.75rem;font-weight:300;
+    color:var(--ink-light);text-align:center;margin-bottom:1.4rem;
+  }
+
+  .share-opt{
+    display:flex;align-items:center;justify-content:center;gap:0.7rem;
+    width:100%;padding:0.9rem;border-radius:12px;
+    font-family:'Outfit',sans-serif;font-size:0.9rem;font-weight:500;
+    border:none;cursor:pointer;margin-bottom:0.6rem;
+    transition:opacity 0.2s,transform 0.15s;
+  }
+  .share-opt:active{transform:scale(0.98);opacity:0.85;}
+
+  .share-opt-wa{background:linear-gradient(135deg,#1a9e46,#25D366);color:#fff;box-shadow:0 4px 16px rgba(37,211,102,0.25);}
+  .share-opt-copy{background:var(--cream-light);color:var(--forest);border:1.5px solid var(--sand-light);}
+  .share-opt-cancel{background:none;color:var(--ink-light);font-size:0.82rem;font-weight:400;margin-bottom:0;}
+
 </style>
 </head>
 <body>
@@ -393,5 +439,28 @@ function share(){
   }
 }
 </script>
+
+<!-- SHARE MODAL -->
+<div id="share-modal" class="share-modal-overlay">
+  <div class="share-modal-box">
+    <p class="share-modal-title">Compartilhar cartão</p>
+    <p class="share-modal-sub">O preview aparece automaticamente no WhatsApp</p>
+
+    <button id="wa-share-btn" class="share-opt share-opt-wa">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Enviar pelo WhatsApp
+    </button>
+
+    <button id="copy-share-btn" class="share-opt share-opt-copy">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      Copiar link
+    </button>
+
+    <button id="close-share-btn" class="share-opt share-opt-cancel">
+      Cancelar
+    </button>
+  </div>
+</div>
+
 </body>
 </html>
