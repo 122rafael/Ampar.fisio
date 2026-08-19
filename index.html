@@ -984,6 +984,29 @@
   </script>
   <!-- Fim Google Analytics -->
 
+  <!-- Google Ads Tag (gtag.js) AW-16449279882 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16449279882"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-16449279882');
+  </script>
+  <!-- Fim Google Ads Tag -->
+
+  <!-- Google Ads Conversion Snippet -->
+  <script>
+    function gtagConversion() {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-16449279882/dTiVCLj-uKscEIqv0KM9',
+        'value': 1.0,
+        'currency': 'BRL'
+      });
+    }
+  </script>
+  <!-- Fim Conversion Snippet -->
+
+
 </head>
 <body>
 
@@ -1703,6 +1726,8 @@
   var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx9jwvJEZEZIZ3RX0fIf_AkjLOwOQOQ1y_8kMcOKv0jr-yefFzJiBK7bjPPDK4Ldy_05g/exec';
 
   function sendWhatsApp() {
+    // Fire Google Ads conversion
+    if (typeof gtag !== 'undefined') { gtagConversion(); }
     var nome = document.getElementById('input-nome').value.trim();
     var tel  = document.getElementById('input-tel').value.trim();
 
