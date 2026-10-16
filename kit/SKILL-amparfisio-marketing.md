@@ -224,6 +224,15 @@ Educativo (com fonte real) · Opinião técnica do Rafael · Bastidores reais ·
 
 ---
 
+### SEMANA TEMÁTICA (v1.1 — substitui o rodízio sortido)
+- 1 tema por semana, 7 ângulos diferentes, formato nunca repetido:
+  Seg O QUE É (carrossel) · Ter MITO (Reel opinião) · Qua SINAIS (Reel identificação + enquete) · Qui PRÁTICA (Reel utilidade) · Sex COMO EU TRATO (post foto real, CTA avaliação + caixa de perguntas) · Sáb BASTIDOR (real) · Dom REFLEXÃO (pensamento)
+- Rodízio: Joelho → Lombar/ciático → Ombro → Pé/calcanhar → Prevenção/força 40+ → repete
+- Semana 19–25/10/2026: JOELHO (aprovada)
+- Rafael grava os 3 Reels num único dia, até domingo anterior
+- Rotina automática: toda segunda 8h49 (trig_01PeKj6w84weqm3zqhX2qq32) → relatório + cronograma temático da semana seguinte
+- Arquivos: posts em posts/AAAA-MM-DD-tema/ e kit visual em kit/ (branch claude/social-media-account-manager-ms7vfj, raw.githubusercontent.com = link público para o Metricool). Pasta "metricool" no Drive = entrada das fotos reais do Rafael
+
 ## 10. ESTRATÉGIA DE REELS
 
 ### Os 5 formatos que funcionam — NUNCA repetir o mesmo
