@@ -295,6 +295,15 @@ Frases no tom de Rafael — naturais, não projetadas:
 | Parkinson domiciliar | RevFT 2024 | https://revistaft.com.br/efeitos-da-fisioterapia-na-qualidade-de-vida-de-individuos-com-doenca-de-parkinson-uma-revisao-integrativa/ |
 | Exercício idosos 80+ | Tandfonline RCT 2025 | https://www.tandfonline.com/doi/full/10.1080/07853890.2025.2459818 |
 
+### HIERARQUIA DE FONTES (v1.1 — definida pelo Rafael)
+1. JOSPT Clinical Practice Guidelines (APTA Orthopedics) — fisioterapia, mais específica
+2. Cochrane (revisões sistemáticas)
+3. Diretrizes OARSI · NICE · ACR · consensos BJSM
+4. Base PEDro (pedro.org.au) — conferir estudos de fisioterapia e nota de qualidade
+5. Ensaios clínicos isolados só como apoio
+- Preferir diretrizes dos últimos 5–8 anos; link real conferido (DOI) na legenda
+- Fontes já usadas: Bannuru 2019 OARSI (doi.org/10.1016/j.joca.2019.06.011) · Cruz-Jentoft & Sayer, Lancet 2019 (doi.org/10.1016/S0140-6736(19)31138-9) · Hilton & Pinder, Cochrane 2014 Epley
+
 ### REGRA CIENTÍFICA INVIOLÁVEL
 - NUNCA inventar dados ou estudos
 - Todo dado científico DEVE ter link real na legenda
