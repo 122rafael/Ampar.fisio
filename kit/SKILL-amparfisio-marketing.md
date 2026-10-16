@@ -16,6 +16,8 @@ description: |
 - PERGUNTAR: "Aprova essas imagens? Quer enviar alguma foto sua para usar no lugar?"
 - Só gerar imagem (Nano Banana) depois da resposta
 
+- Imagens EDUCATIVAS (anatomia do joelho, ilustração da condição, esquema) → SÓ quando o Rafael pedir explicitamente. Padrão = imagens de estilo de vida. Revisar anatomia gerada por IA antes de mostrar.
+
 **ETAPA 2 — Entrega:**
 - SEMPRE entregar arte/carrossel + LEGENDA COMPLETA pronta para postar (gancho, corpo, CTA, fonte científica com link se houver, assinatura CREFITO, 5 hashtags fixas)
 - Indicar data/horário sugerido (18h–20h)
@@ -234,6 +236,9 @@ Educativo (com fonte real) · Opinião técnica do Rafael · Bastidores reais ·
 - Arquivos: posts em posts/AAAA-MM-DD-tema/ e kit visual em kit/ (branch claude/social-media-account-manager-ms7vfj, raw.githubusercontent.com = link público para o Metricool). Pasta "metricool" no Drive = entrada das fotos reais do Rafael
 
 ## 10. ESTRATÉGIA DE REELS
+
+> EDIÇÃO: todo vídeo bruto enviado pelo Rafael passa pela linha completa da skill **editor-reels-ampar** (cortes de silêncio, zoom com detecção corporal, color grade, animações HyperFrames, legendas palavra a palavra, CTA). Inserções Motion só com autorização (gastam créditos).
+
 
 ### Os 5 formatos que funcionam — NUNCA repetir o mesmo
 1. **História inesperada** — começa comum, termina surpreendente
