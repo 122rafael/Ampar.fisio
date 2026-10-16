@@ -1,0 +1,25 @@
+@import url("fonts/local-fonts.css");
+:root{--g:#16291f;--g2:#1E3A2F;--gold:#D9A441;--gold2:#E7BE6A;--cream:#F4EEE3;--areia:#F1E9DB;--sage:#9FB3A4;--ink:#1B3326}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1350px;overflow:hidden}
+.slide{position:relative;width:1080px;height:1350px;overflow:hidden;font-family:'Montserrat',sans-serif}
+.areia{background:radial-gradient(120% 90% at 85% 10%,#FBF6EC 0%,#F1E9DB 55%,#E9DECB 100%);color:var(--ink)}
+.verde{background:radial-gradient(120% 100% at 20% 0%,#21402F 0%,#16291f 60%,#0F1E16 100%);color:var(--cream)}
+.pad{position:absolute;left:96px;right:96px;top:120px}
+.eyebrow{font-weight:600;font-size:24px;letter-spacing:.32em;text-transform:uppercase;color:var(--ink)}
+.verde .eyebrow{color:var(--gold)}
+.div{width:84px;height:3px;background:var(--gold);margin:28px 0 44px}
+h1{font-family:'Newsreader',serif;font-weight:500;font-size:112px;line-height:1.02;letter-spacing:-.015em}
+h2{font-family:'Newsreader',serif;font-weight:500;font-size:84px;line-height:1.08;letter-spacing:-.01em}
+.acc{color:#C9892A}
+.verde .acc{color:var(--gold2)}
+.sub{font-family:'Montserrat';font-weight:400;font-size:40px;line-height:1.35;margin-top:56px;color:#2B4436}
+.foot{position:absolute;left:0;right:0;bottom:0;height:120px;background:#16291f;display:flex;align-items:center;padding:0 72px;gap:22px;color:var(--cream)}
+.verde .foot{background:rgba(10,20,15,.55);border-top:1px solid rgba(217,164,65,.35)}
+.logo{width:78px;height:78px;background:var(--gold);-webkit-mask:url(assets/logo.png) center/contain no-repeat;mask:url(assets/logo.png) center/contain no-repeat}
+.brand{font-family:'Newsreader';font-size:40px;letter-spacing:.01em}
+.brand b{font-weight:400;color:var(--gold2)}
+.cred{margin-left:auto;font-size:22px;letter-spacing:.04em;color:#CFC8BA}
+.cred span{color:var(--gold);margin:0 12px}
+.swipe{position:absolute;right:96px;bottom:168px;font-size:26px;letter-spacing:.18em;color:#7A6A4E;font-weight:500}
+.arc{position:absolute;border:2px solid rgba(201,137,42,.55);border-radius:50%}
