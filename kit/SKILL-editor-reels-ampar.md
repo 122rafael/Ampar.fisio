@@ -1,0 +1,72 @@
+---
+name: "editor-reels-ampar"
+description: "Edita Reels da Ampar.fisio a partir de vídeo bruto: corta silêncios, zoom com detecção corporal, color grade cinema, animações HyperFrames, legendas palavra a palavra, narração e CTA."
+---
+
+# Editor de Reels Ampar.fisio
+
+Use quando Rafael (@fisiorafaellima) mandar um vídeo bruto e pedir edição: zoom em articulação, animação explicativa, legenda, narração, gancho, cores de cinema, corte de silêncio/respiração/repetição. Também use quando ele pedir só uma animação (abertura, vinheta, explicação animada). Combine com a skill `amparfisio-marketing` (marca, tom, roteiro) — leia o briefing do projeto para cores e regras.
+
+## Identidade fixa
+- Cores: verde #1E3A2F, verde médio #2A5040/#3D6B55, dourado #D9A441, terracota #B5683B, sálvia #93AC9A, areia #F4ECDD/#D9C9B0, creme #F2EDE4. Alerta (dor/erro): #E0603A.
+- Fontes: Playfair Display (títulos) e Outfit (legenda/labels). Baixar de raw.githubusercontent.com/google/fonts/main/ofl/playfairdisplay/PlayfairDisplay%5Bwght%5D.ttf e .../ofl/outfit/Outfit%5Bwght%5D.ttf.
+- Saída: 1080x1920, 30 fps, H.264, <30 MB para envio. Com narração sintética: 2 versões (narrada e sem voz).
+- Área segura: nada importante acima de y=200 nem abaixo de y=1620. Legenda em y≈1490.
+- Tudo em português do Brasil (fala, legenda, textos na tela).
+- Máx. 2 emojis no texto da legenda do post (não no vídeo). Sem jargão sem tradução; analogias do cotidiano.
+- Chamada final: casar com o que Rafael fala ("comente PALAVRA" → celular comentando com coração; "me manda uma mensagem" → celular enviando DM e recebendo "Isso tem solução.") + @fisiorafaellima + "Ampar.fisio · Dr. Rafael Lima".
+
+## Dois tipos de vídeo bruto
+- **Demonstração de movimento sem fala** (exercício, avaliação): detecção corporal + zoom + linhas + narração + animações.
+- **Rafael falando para a câmera** (talking head): transcrever, cortar pausas e takes repetidos, punch-ins no rosto, animações explicativas como cortes de cena com o rosto dele em círculo (PiP) no canto, legendas karaokê com o texto corrigido.
+
+## Fluxo (sempre nesta ordem)
+1. **Inspecionar**: `ffprobe` (duração, rotação — vídeo de celular costuma vir com rotation=-90), contact sheet com `ffmpeg -vf fps=4,scale=360:-1,tile=8x11` (ou fps=1 para vídeos longos) e olhar; `volumedetect` para saber se há fala. Achar repetições do movimento e o melhor trecho.
+2. **Transcrever (quando houver fala)** — funciona neste ambiente: `pip install sherpa-onnx --break-system-packages`; modelo do GitHub `curl -L -O https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-whisper-small.tar.bz2` e `tar xjf`. Extrair áudio mono 16 kHz, segmentar por `silencedetect=noise=-33dB:d=0.3`, transcrever cada trecho com `sherpa_onnx.OfflineRecognizer.from_whisper(encoder=small-encoder.int8.onnx, decoder=small-decoder.int8.onnx, tokens=small-tokens.txt, language='pt', task='transcribe')` (ler o wav com o módulo `wave`; soundfile não vem instalado). Corrigir à mão erros óbvios do ASR (ex.: "Dora Mesa" = "dor há meses"). Se a transcrição falhar, pedir o roteiro e comparar com ele.
+3. **Roteiro de cenas antes de renderizar**: mandar lista curta (cena, tempo, texto falado, visual) e seguir só após ok — exceto se Rafael pedir para seguir direto ("faça", "pode seguir"): aí mandar a lista e seguir sem esperar.
+4. **Limpeza de fala**: manter só trechos falados com margem de 0,12 s; pausas >0,7 s e respirações saem; fades de 30 ms em cada trecho, concatenar. Takes repetidos/falsos começos (ex.: "Se você..." repetido): ficar com a **última versão completa** de cada fala. Alternativa para silêncio: `pip install auto-editor --break-system-packages` e `auto-editor in.mp4 --margin 0.15sec`. Voz: `highpass=f=80,afftdn=nf=-28,equalizer=f=3000:t=q:w=1.5:g=2,acompressor=threshold=-22dB:ratio=3:attack=5:release=150` e `loudnorm=I=-14:TP=-1.5`.
+5. **Detecção corporal + zoom**: `pip install ultralytics --break-system-packages`; pesos do GitHub: `curl -L -o yolo11m-pose.pt https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11m-pose.pt` (ou `yolo11n-pose.pt` para rosto; HuggingFace é bloqueado).
+   - Movimento: rodar em cópia 1080x1920, salvar keypoints por quadro (COCO: 11/12 quadril, 13/14 joelho, 15/16 tornozelo). Interpolar faltas, suavizar (gauss σ≈1,5 para linhas, σ≈9 para câmera). Recortar da fonte 4K (melhor nitidez) com centro = média quadris/joelho e y = quadril + 0,47·(tornozelo−quadril), zoom 2,1–2,3.
+   - Overlay: linha dourada quadril→joelho→tornozelo, linha da pelve creme, linha tracejada vertical do quadril ("linha ideal"), anel terracota pulsando no joelho, seta quando |joelho_x − quadril_x| > 18 px. Desenhar progressivamente nos 0,8 s iniciais; seta só depois da linha completa.
+   - **Ser honesto com o dado**: medir desvio do joelho em relação ao quadril/tornozelo antes de narrar; narrar só o que aparece (ex.: base estreita vs. joelho passando do pé). Avisar Rafael se a medição divergir do pedido.
+   - Câmera lenta: 0,5–0,7x com mistura entre quadros vizinhos. Congelar o quadro de maior desvio com push-in e título.
+   - Rosto (talking head): yolo nano a cada 3 quadros, centro = média dos pontos 0–4 (nariz/olhos/orelhas), suavizar σ≈12. Punch-ins variando por frase (gancho 1,22→1,0 em 0,5 s; demais frases 1,02–1,09). Evitar zoom >1,1 no rosto (corta a cabeça).
+6. **Color grade cinema** (só nos trechos de vídeo real): LUT por canal — c = 0,62x + 0,38·smoothstep(x); preto levantado 0,025; R = c + 0,035c² − 0,012; G = c + 0,018(1−c)²; B = c − 0,045c² + 0,035(1−c)²; saturação ×1,05–1,06; vinheta elíptica (mín. 0,55); grão gaussiano σ≈5–6 com banco fixo de 6 quadros (seed 42).
+7. **Animações no HyperFrames** (cenas explicativas e CTA; um projeto por cena):
+   - `node -v` (precisa 22+). `index.html` com root `data-composition-id="main" data-duration="X" data-width="1080" data-height="1920"`, uma `gsap.timeline({paused:true})` registrada em `window.__timelines["main"]` no fim.
+   - Ajustes deste ambiente: GSAP local (`npm i gsap@3.14.2` e copiar `gsap.min.js` — CDN bloqueado no navegador); fontes via `@font-face` local; render com `HYPERFRAMES_BROWSER_PATH=/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell HYPERFRAMES_NO_UPDATE_CHECK=1 HYPERFRAMES_SKIP_SKILLS=1 npx -y hyperframes@0.8.140 render -o cena.mp4`. Conferir com `lint` e `snapshot --at t1,t2 --no-end --describe false` antes de renderizar.
+   - **Determinismo** (é o que evita animação travada, "cara de PowerPoint"): cada elemento é função do tempo da timeline; nada de relógio, `Math.random` sem semente, rede ou gravação de tela. O renderizador fotografa quadro a quadro num navegador sem tela, então o quadro 42 sai igual toda vez.
+   - Armadilhas: filtros SVG com `filterUnits="userSpaceOnUse" x=0 y=0 width=1080 height=1920` e traços sólidos (gradiente/filtro em linha vertical com bbox de largura zero some); animar geometria com `attr` tweens (não depender de onUpdate); pulsos correndo por um nervo = path com `stroke-dasharray="70 2000"` + tween de `strokeDashoffset`; texto sendo digitado = um `<tspan>` por letra com `tl.set` de opacidade; `immediateRender:false` em fromTo repetidos; nunca animar visibilidade de `.clip`; sem `<br>` em texto corrido.
+   - Estilo: fundo radial verde, light leak dourado/terracota se movendo, grão, vinheta, barra dourada no topo, eyebrow terracota espaçado + título Playfair com palavra-chave dourada, corpo/ossos estilo raio-x/holograma creme com brilho, músculo coral com fibras, alerta #E0603A. Labels à esquerda (x≈225–300) para não colidir com o corpo; deixar livre o canto inferior direito quando houver PiP.
+   - **Cada cena casa com a frase falada naquele momento** — conferir a ordem fala × visual (se a fala começa pela analogia, a analogia vem primeiro).
+   - Biblioteca de cenas já validadas: pernas alinhado × valgo; dobradiça de porta torta raspando com faíscas; pelve + glúteo médio forte→fraco (pelve cai do outro lado, joelho entra); corda e mastro da barraca; corpo com lesão no tornozelo, sinal subindo pelo nervo e cérebro tocando alarme ("alarme com fogo"); tecido saudável com alarme tocando mesmo assim ("alarme sem fogo"); botão de volume da dor indo ao máximo; ciclo da dor (dor → para de se mover → corpo mais sensível → mais dor); celular digitando a palavra do CTA nos comentários com coração; celular enviando DM e recebendo resposta.
+8. **Montagem** (Python + OpenCV + PIL, pipe raw para ffmpeg): gancho (0–3 s) com zoom de impacto e texto grande centralizado com pop de escala; transição com zoom + flash de 0,22 s quando muda o tipo de visual (desligar no modo de pré-visualização, senão os quadros de teste saem misturados); PiP do rosto em círculo (raio ≈118, borda dourada, recorte ≈780 px em volta do rosto) durante as animações de talking head; legendas karaokê (blocos ≤16 caracteres, palavra ativa dourada maior, faladas brancas, futuras translúcidas, palavras-chave douradas, contorno escuro 7 px); sem legenda no gancho, em trechos com texto grande na tela e no CTA animado. Pré-visualizar quadros de cada cena antes do render completo.
+9. **Narração**: prioridade 1 = voz do Rafael (gravada ou clonada por ele no VoiceStudio/ElevenLabs e enviada) — sincronizar, limpar, loudnorm. Sem voz dele: Piper pt-BR do GitHub (`piper_linux_x86_64.tar.gz` release 2023.11.14-2 + `voice-pt-br-edresson-low.tar.gz` release v0.0.2), `--length_scale 0.92`, e avisar que é voz sintética. Timeline das cenas = duração de cada fala + 0,15 s antes + 0,3 s depois. Nesse caso entregar também versão sem voz e `roteiro_narracao.txt` com tempos.
+10. **Áudio**: whoosh (ruído rosa 0,55 s, HP 400/LP 5000, fades) 0,3 s antes de cada troca de cena; boom 55 Hz no início; ambiente original baixo só no gancho (vídeo sem fala); `amix ... :duration=first` + compressor + `loudnorm=I=-14:TP=-1.5`. Sugerir áudio em alta baixinho no Instagram.
+11. **Inserções realistas (Motion)**: só com autorização (gastam créditos; a conta estava com 0 créditos, pacote US$ 6 = 200). Usar quando o realismo muda o entendimento (músculo/articulação em 3D, cena do dia a dia com pessoa); para esquemas, analogias, textos e celular, HyperFrames resolve sem custo. Pedido ao `create_video`: brief curto em português (objetivo, o que aparece, 9:16, 3–6 s, sem texto na tela, sem narração, paleta verde/dourado), testar 1 inserção e informar o consumo antes de usar em série. Revisar anatomia gerada por IA.
+12. **Conferir antes de entregar**: extrair quadros em cada cena e olhar; checar sincronia fala × visual, cortes de texto, legenda sobre conteúdo importante, volume; comprimir para <30 MB (`-b:v 4000–4300k`). Entregar com 2–3 frases do que foi feito.
+
+
+## Regras do Rafael (out/2026) — OBRIGATÓRIAS
+- **Tratamento de áudio SEMPRE**, em todo vídeo, mesmo sem pedir: `arnndn=m=std.rnnn:mix=0.85` (modelo: raw.githubusercontent.com/richardpl/arnndn-models/master/std.rnnn), highpass 90, EQ −4 dB em 320 Hz (tira som de sala), +2 dB 160 Hz, +3,5 dB 4,2 kHz, `agate`, compressor 4:1 com makeup, `loudnorm=I=-14:TP=-1.5`. Avisar se a gravação foi longe do microfone.
+- **Legenda premium**: limpa e fluida — Outfit ~60 px, sem contorno grosso; sombra suave desfocada; blocos de até 3 palavras/18 caracteres; palavra ativa dourada com leve crescimento; futuras translúcidas; entrada com fade + subida curta. Nada de legenda "pesada".
+- **Esqueleto/linhas**: sempre a MESMA perna (a do lado da câmera), escolhida uma vez para o trecho todo, com interpolação e suavização. Nunca trocar de perna quadro a quadro.
+- **Final ágil**: nada de quadro congelado ou trecho "travado" (ex.: Rafael sentando). Cortar direto na fala do CTA.
+- **CTA com celular**: animação do celular sobreposta na parte de baixo enquanto Rafael fala o CTA (não como cena separada depois).
+- **Ciclo da dor**: preferir órbita em perspectiva 3D sobre o próprio Rafael (anel elíptico com nós que giram, frente maior/nítida, fundo menor/translúcido).
+- **Takes**: conferir todas as versões de cada frase e usar a que termina com entonação de ponto final; se Rafael mandar take novo (ex.: "video 2"), substituir.
+- **Imagens de terceiros**: nunca remover marca d'água nem usar imagem de banco sem licença; gerar imagem original (Nano Banana) ou usar material próprio.
+- Arquivos chegam por pasta compartilhada do Drive ("qualquer pessoa com o link") → baixar com `gdown` (rede liberada: drive.google.com, *.googleusercontent.com).
+
+## Pedido de animação avulsa (abertura, vinheta, explicação)
+Transformar o pedido de Rafael num brief de diretor antes de construir, e mostrar em 3–5 linhas:
+- **Duração e formato**: segundos exatos; vertical 1080x1920 recomposto para o vertical (elementos reposicionados, nunca um horizontal cortado no meio); 30 fps padrão, 60 fps para motion graphics puros com muito movimento.
+- **Tipografia cinética**: quais palavras entram, como (pop de escala, máscara subindo, digitação, letra a letra) e qual vira destaque dourado.
+- **Transições entre formas**: o que vira o quê (ex.: ponto → joelho → linha de força).
+- **Câmera**: push-in, pan, parallax em camadas, zoom no detalhe; profundidade com desfoque e luz.
+- **Final**: se precisa emendar no começo (loop) — último quadro igual ao primeiro.
+Depois do render, aceitar ajustes falados e traduzir direto na timeline: "mais suave" = eases `power2/sine` e durações +30%; "mais rápido/energia" = durações −30% e `back.out`; "troca a cor" = paleta da marca; "desacelera esse trecho" = esticar só os tweens daquele intervalo; "emenda o final no começo" = loop. Refazer só a cena alterada.
+
+## Estruturas padrão
+- **Movimento (≈45–60 s)**: gancho de curiosidade (sem medo/dor) → vídeo real em câmera lenta com linhas → congelamento com nome do problema → animação analogia → animação do porquê (músculo) → outro ângulo/lado do vídeo → consequência no dia a dia (dor ao descer escada, falseio) → CTA com celular.
+- **Talking head (≈40–50 s)**: gancho com texto grande sobre o rosto → rosto (contexto) → animações nas frases explicativas, com PiP → rosto com texto-chave na frase de virada → CTA (rosto, depois celular).
