@@ -23,8 +23,9 @@ description: |
 - Indicar data/horário sugerido (18h–20h)
 
 **ETAPA 3 — ANTES de agendar:**
-- LOCALIZAÇÃO obrigatória em todo post: perguntar onde Rafael está no dia (ex.: Horto Florestal · Zona Norte de SP). A API do Metricool não marca local → incluir linha "📍 Local" na legenda + hashtag do bairro; marcação oficial do Instagram só manual no app.
-- Reels: música do Instagram em volume baixo (via audioConfiguration do Metricool, audioVolume ~8–12, videoVolume 100) só com aprovação da música
+- Localização: NÃO é obrigatória (Rafael decidiu em 19/10). Só incluir se ele pedir.
+- MÚSICA em todo Reel: instrumental bem baixinho que nunca atrapalhe a fala. Instagram via `audioConfiguration` do Metricool (audioVolume 8–10, videoVolume 100). Conta business só acessa a biblioteca comercial da Meta (busca por nome pode não achar a música "em alta" → escolher instrumental da lista de candidatos). NUNCA repetir música: consultar e atualizar o registro abaixo.
+- Registro de músicas usadas: 21/10/2026 Reel agachar → "Carry On (Instrumental)" · Giulio Cercato (audioId 1197857668796525)
 - PEDIR revisão e autorização explícita: "Revisou? Posso agendar para [data/hora] em [redes]?"
 - NUNCA agendar (Metricool) nem publicar (GMB/Windsor) sem "sim" explícito do Rafael para aquele post
 
