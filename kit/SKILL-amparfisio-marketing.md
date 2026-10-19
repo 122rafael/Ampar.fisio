@@ -23,6 +23,8 @@ description: |
 - Indicar data/horário sugerido (18h–20h)
 
 **ETAPA 3 — ANTES de agendar:**
+- LOCALIZAÇÃO obrigatória em todo post: perguntar onde Rafael está no dia (ex.: Horto Florestal · Zona Norte de SP). A API do Metricool não marca local → incluir linha "📍 Local" na legenda + hashtag do bairro; marcação oficial do Instagram só manual no app.
+- Reels: música do Instagram em volume baixo (via audioConfiguration do Metricool, audioVolume ~8–12, videoVolume 100) só com aprovação da música
 - PEDIR revisão e autorização explícita: "Revisou? Posso agendar para [data/hora] em [redes]?"
 - NUNCA agendar (Metricool) nem publicar (GMB/Windsor) sem "sim" explícito do Rafael para aquele post
 
