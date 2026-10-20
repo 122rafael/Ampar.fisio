@@ -21,6 +21,7 @@ description: |
 **ETAPA 2 — Entrega:**
 - SEMPRE entregar arte/carrossel + LEGENDA COMPLETA pronta para postar (gancho, corpo, CTA, fonte científica com link se houver, assinatura CREFITO, 5 hashtags fixas)
 - Indicar data/horário sugerido (18h–20h)
+- TELEFONE: NUNCA colocar o número de telefone/WhatsApp em legendas nem em artes (Rafael decidiu em 20/10/2026). CTA sempre para o direct, comentários ou @fisiorafaellima.
 
 **ETAPA 3 — ANTES de agendar:**
 - Localização: NÃO é obrigatória (Rafael decidiu em 19/10). Só incluir se ele pedir.
@@ -42,7 +43,7 @@ description: |
 | Localização | Atibaia e região (SP) |
 | Instagram | @fisiorafaellima |
 | Site | https://122rafael.github.io/Ampar.fisio/ |
-| WhatsApp | (11) 98879-1599 |
+| WhatsApp | (11) 98879-1599 — uso interno; NUNCA publicar em post/arte |
 | Link WA | https://wa.me/5511988791599?text=Olá+Dr.+Rafael!+Vi+seu+conteúdo+e+gostaria+de+saber+mais. |
 
 ---
