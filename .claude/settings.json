@@ -1,0 +1,14 @@
+{
+  "extraKnownMarketplaces": {
+    "impeccable": {
+      "source": { "source": "github", "repo": "pbakaus/impeccable" }
+    },
+    "taste-skill": {
+      "source": { "source": "github", "repo": "Leonxlnx/taste-skill" }
+    }
+  },
+  "enabledPlugins": {
+    "impeccable@impeccable": true,
+    "taste-skill@taste-skill": true
+  }
+}
