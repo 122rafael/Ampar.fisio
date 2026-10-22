@@ -10,5 +10,6 @@ Copiadas dos repositórios originais em 2026-10-18 (pastas `evals/` removidas).
 | gsap-core, gsap-timeline, gsap-scrolltrigger, gsap-plugins, gsap-performance, gsap-utils | https://github.com/greensock/gsap-skills | MIT |
 | google-ads-api-account-diagnostics, google-ads-api-mcp-setup, google-ads-api-quickstart, google-analytics-data-api-basics | https://github.com/google/skills (adicionadas em 2026-10-19) | Apache-2.0 |
 | biblioteca-prompts-video (videos.json) | https://github.com/yihui-dev/awesome-opus5-5-videos (adicionada em 2026-10-19) | MIT |
+| motion-design | https://github.com/howseen-ai/claude-motion-design (adicionada em 2026-10-22) | MIT |
 
 Para atualizar: clonar o repositório de origem e substituir a pasta da skill.
