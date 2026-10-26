@@ -1,4 +1,4 @@
-# Linha editorial dos Stories — Semana da Coluna (26/10 a 01/11/2026)
+# Linha editorial dos Stories — Semana da Coluna (26/10 a 01/11/2026) — versão 2
 
 Fonte: PDF "Semana da Coluna — Plano de Stories e Reels" enviado pelo Rafael em 26/10/2026.
 
@@ -26,3 +26,10 @@ Fonte: PDF "Semana da Coluna — Plano de Stories e Reels" enviado pelo Rafael e
 
 ## Metas (medir no domingo)
 Alcance médio por Story 60 · por Reel 250 · comentários COLUNA 10 · conversas no WhatsApp 3.
+
+## Versão 2 (confirmada pelo Rafael em 26/10)
+1. Região: público "mulheres de 35 a 65 anos, Zona Norte de SP". Atibaia só como complemento ("também atendo Atibaia, sob consulta"). Convite de sexta: "Se a coluna está limitando seu dia, ou o de alguém da sua família, eu atendo em casa na Zona Norte de SP." Rodapé: "Atendimento domiciliar na Zona Norte de SP e região".
+2. Telefone nunca escrito; nos Stories só sticker de link do WhatsApp.
+3. Feed: seg 19h carrossel 4 mitos (Stories: "Qual desses você já ouviu?"); qua 19h estático 30–60 min (após enquete de horas sentado); Reels ter/qui/sáb 18h (enquete/slider); sex sem post; dom pensamento.
+4. CTA único: "Comenta COLUNA que eu te mando um exercício." DMs sem preço; atendimento → WhatsApp.
+5. Próximo plano (equilíbrio e quedas) até domingo 01/11.
