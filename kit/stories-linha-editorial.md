@@ -1,4 +1,4 @@
-# Linha editorial dos Stories — Semana da Coluna (26/10 a 01/11/2026) — versão 2
+# Linha editorial dos Stories — Semana da Coluna (26/10 a 01/11/2026) — versão 3 (PDF: kit/stories-semana-coluna-v3.pdf; Stories 100% Rafael, sem artes)
 
 Fonte: PDF "Semana da Coluna — Plano de Stories e Reels" enviado pelo Rafael em 26/10/2026.
 
