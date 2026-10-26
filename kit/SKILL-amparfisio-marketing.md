@@ -21,6 +21,7 @@ description: |
 **ETAPA 2 — Entrega:**
 - SEMPRE entregar arte/carrossel + LEGENDA COMPLETA pronta para postar (gancho, corpo, CTA, fonte científica com link se houver, assinatura CREFITO, 5 hashtags fixas)
 - Indicar data/horário sugerido (18h–20h)
+- REGIÃO (Rafael, 26/10/2026): foco atual = ZONA NORTE DE SP (Horto Florestal, Tremembé, Mandaqui, Santana, Tucuruvi e bairros próximos). Atibaia e região em SEGUNDO PLANO (captar aos poucos, 'sob consulta'). Em legendas/CTAs citar Zona Norte primeiro; Atibaia só como complemento.
 - ALINHAMENTO COM STORIES (Rafael, 21/10/2026): todo post do feed (tema, mensagem, CTA) deve estar alinhado com a linha editorial dos Stories, planejada em outra conversa. Antes de propor/criar posts da semana, pedir ou consultar o plano de Stories vigente (arquivo `kit/stories-linha-editorial.md` no repo, quando existir) e citar como o post conversa com os Stories do dia.
 - TELEFONE: NUNCA colocar o número de telefone/WhatsApp em legendas nem em artes (Rafael decidiu em 20/10/2026). CTA sempre para o direct, comentários ou @fisiorafaellima.
 

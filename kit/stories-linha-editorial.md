@@ -3,7 +3,7 @@
 Fonte: PDF "Semana da Coluna — Plano de Stories e Reels" enviado pelo Rafael em 26/10/2026.
 
 - Tema: a coluna de quem cuida e de quem trabalha. Objetivo: conversa e novos pacientes.
-- Público principal (no PDF): mulheres de 35 a 65 anos, Atibaia e região.
+- Público principal (no PDF): mulheres de 35 a 65 anos, Atibaia e região. **Ajuste do Rafael (26/10): região foco = Zona Norte de SP; Atibaia em segundo plano.**
 - Palavra dos Reels: COLUNA. CTA dos 3 Reels: "Comenta COLUNA que eu te mando um exercício."
 - Regras: 3 a 5 Stories/dia (máx. 2 artes), 1 Story pessoal/dia, 1 interação de um toque/dia,
   horários 7–9h, 12–13h, 18–20h (nada após 21h), todo Reel vai para os Stories em até 30 min, DM em até 24h.
