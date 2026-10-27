@@ -13,14 +13,16 @@ Mostrar: pegando caixa/cesto de roupa de dois jeitos. NÃO dizer que o outro jei
 5. "Suba empurrando o chão, com o objeto colado em você." (demonstra 1x)
 6. CTA: "Comenta COLUNA que eu te mando um exercício."
 
-## Reel 2 · Qui 29/10 18h · Teste do bastão  → arquivo: coluna-reel2
-Material: cabo de vassoura. Mostrar certo e errado (mesmo formato do Reel do quadril).
-1. "Faz esse teste com um cabo de vassoura."
-2. "Coloca o cabo nas costas, encostando em três pontos: cabeça, meio das costas e bumbum."
-3. "Agora inclina o tronco pra frente, dobrando o quadril, sem perder nenhum dos três pontos." (certo)
-4. (errado) "Se o cabo saiu da cabeça ou do bumbum, a coluna fez o movimento no lugar do quadril."
-5. "Esse movimento é o mesmo que você usa pra pegar peso do chão."
-6. CTA: "Comenta COLUNA que eu te mando um exercício."
+## Reel 2 · Qui 29/10 18h · "Medo de se mexer por causa da dor?" (cinesiofobia, ~30 s)  → arquivo: coluna-reel2
+1. "Medo de se mexer por causa da dor nas costas?"
+2. "Isso tem nome: cinesiofobia."
+3. "E evitar o movimento deixa a dor mais sensível."
+4. "Dor ao se mexer nem sempre é lesão."
+5. "Faz assim: escolha o movimento que você evita,"
+6. (abaixando até o joelho) "faça uma versão menor"
+7. (abaixando mais) "e aumente um pouco a cada dia."
+8. "Desconforto leve que passa? Pode seguir. Dor forte ou que piora? Pare."
+9. CTA (sentado): "Comenta COLUNA que eu te mando um exercício."
 
 ## Reel 3 · Sáb 31/10 18h · "Pare de procurar a postura perfeita"  → arquivo: coluna-reel3
 Mostrar: sentado no trabalho ou no sofá, mudando de posição.

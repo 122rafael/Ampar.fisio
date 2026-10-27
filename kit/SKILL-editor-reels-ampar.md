@@ -48,6 +48,7 @@ Use quando Rafael (@fisiorafaellima) mandar um vídeo bruto e pedir edição: zo
 
 
 ## Regras do Rafael (out/2026) — OBRIGATÓRIAS
+- DURAÇÃO DOS REELS (Rafael, 27/10/2026): no MÁXIMO 30–40 s. Roteiro curto e direto (~60–75 palavras), uma ideia por frase, interativo. Evitar conteúdo que gere medo de se mexer (cinesiofobia): mensagem central = mover é seguro e ajuda.
 
 - **Vídeo gerado por IA (Gemini/Veo etc.) — regra do Rafael 27/10/2026:** NUNCA distorcer: sem câmera lenta/aceleração, sem zoom, sem esticar; usar trechos em velocidade 1x (reaproveitar/recortar trechos para cobrir a narração; animações explicativas preenchem o resto). Marcar só com um selo pequeno "IA" na parte de baixo do vídeo + `isAiGenerated` no Instagram.
 - **Tratamento de áudio SEMPRE**, em todo vídeo, mesmo sem pedir: `arnndn=m=std.rnnn:mix=0.85` (modelo: raw.githubusercontent.com/richardpl/arnndn-models/master/std.rnnn), highpass 90, EQ −4 dB em 320 Hz (tira som de sala), +2 dB 160 Hz, +3,5 dB 4,2 kHz, `agate`, compressor 4:1 com makeup, `loudnorm=I=-14:TP=-1.5`. Avisar se a gravação foi longe do microfone.
