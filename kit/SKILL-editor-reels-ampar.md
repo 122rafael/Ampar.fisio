@@ -48,6 +48,8 @@ Use quando Rafael (@fisiorafaellima) mandar um vídeo bruto e pedir edição: zo
 
 
 ## Regras do Rafael (out/2026) — OBRIGATÓRIAS
+
+- **Vídeo gerado por IA (Gemini/Veo etc.) — regra do Rafael 27/10/2026:** NUNCA distorcer: sem câmera lenta/aceleração, sem zoom, sem esticar; usar trechos em velocidade 1x (reaproveitar/recortar trechos para cobrir a narração; animações explicativas preenchem o resto). Marcar só com um selo pequeno "IA" na parte de baixo do vídeo + `isAiGenerated` no Instagram.
 - **Tratamento de áudio SEMPRE**, em todo vídeo, mesmo sem pedir: `arnndn=m=std.rnnn:mix=0.85` (modelo: raw.githubusercontent.com/richardpl/arnndn-models/master/std.rnnn), highpass 90, EQ −4 dB em 320 Hz (tira som de sala), +2 dB 160 Hz, +3,5 dB 4,2 kHz, `agate`, compressor 4:1 com makeup, `loudnorm=I=-14:TP=-1.5`. Avisar se a gravação foi longe do microfone.
 - **Legenda premium**: limpa e fluida — Outfit ~60 px, sem contorno grosso; sombra suave desfocada; blocos de até 3 palavras/18 caracteres; palavra ativa dourada com leve crescimento; futuras translúcidas; entrada com fade + subida curta. Nada de legenda "pesada".
 - **Esqueleto/linhas**: sempre a MESMA perna (a do lado da câmera), escolhida uma vez para o trecho todo, com interpolação e suavização. Nunca trocar de perna quadro a quadro.
