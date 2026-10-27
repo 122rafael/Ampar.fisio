@@ -13,16 +13,15 @@ Mostrar: pegando caixa/cesto de roupa de dois jeitos. NÃO dizer que o outro jei
 5. "Suba empurrando o chão, com o objeto colado em você." (demonstra 1x)
 6. CTA: "Comenta COLUNA que eu te mando um exercício."
 
-## Reel 2 · Qui 29/10 18h · "Medo de se mexer por causa da dor?" (cinesiofobia, ~30 s)  → arquivo: coluna-reel2
-1. "Medo de se mexer por causa da dor nas costas?"
-2. "Isso tem nome: cinesiofobia."
-3. "E evitar o movimento deixa a dor mais sensível."
-4. "Dor ao se mexer nem sempre é lesão."
-5. "Faz assim: escolha o movimento que você evita,"
-6. (abaixando até o joelho) "faça uma versão menor"
-7. (abaixando mais) "e aumente um pouco a cada dia."
-8. "Desconforto leve que passa? Pode seguir. Dor forte ou que piora? Pare."
-9. CTA (sentado): "Comenta COLUNA que eu te mando um exercício."
+## Reel 2 · Qui 29/10 18h · "Medo de abaixar por causa da dor nas costas?" (~28 s, instrução prática, sem nomenclatura)  → arquivo: coluna-reel2
+1. "Tem medo de abaixar por causa da dor nas costas?"
+2. "Faz comigo, devagar."
+3. (abaixa pouco) "Abaixa só até onde é confortável…"
+4. (sobe) "…respira e volta."
+5. (2–3 repetições, cada vez mais fundo) "Repete 5 vezes, indo um pouquinho mais fundo cada vez."
+6. "Seu corpo vai entendendo que esse movimento é seguro."
+7. "Desconforto leve que passa? Pode seguir. Dor forte ou que piora? Pare."
+8. CTA (sentado): "Comenta COLUNA que eu te mando o próximo passo."
 
 ## Reel 3 · Sáb 31/10 18h · "Pare de procurar a postura perfeita"  → arquivo: coluna-reel3
 Mostrar: sentado no trabalho ou no sofá, mudando de posição.
