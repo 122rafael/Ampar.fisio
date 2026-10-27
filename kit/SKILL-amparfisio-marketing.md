@@ -28,7 +28,7 @@ description: |
 **ETAPA 3 — ANTES de agendar:**
 - Localização: NÃO é obrigatória (Rafael decidiu em 19/10). Só incluir se ele pedir.
 - MÚSICA em todo Reel: instrumental bem baixinho que nunca atrapalhe a fala. Instagram via `audioConfiguration` do Metricool (audioVolume 8–10, videoVolume 100). Conta business só acessa a biblioteca comercial da Meta (busca por nome pode não achar a música "em alta" → escolher instrumental da lista de candidatos). NUNCA repetir música: consultar e atualizar o registro abaixo.
-- Registro de músicas usadas: 21/10/2026 Reel agachar → "Carry On (Instrumental)" · Giulio Cercato (audioId 1197857668796525); 22/10/2026 Reel escada → "Breathtaker" · Giulio Cercato (audioId 1372666635060078); 23/10/2026 Reel exercício → "Good Intentions" · Giulio Cercato (audioId 176637328676799)
+- Registro de músicas usadas: 21/10/2026 Reel agachar → "Carry On (Instrumental)" · Giulio Cercato (audioId 1197857668796525); 22/10/2026 Reel escada → "Breathtaker" · Giulio Cercato (audioId 1372666635060078); 23/10/2026 Reel exercício → "Good Intentions" · Giulio Cercato (audioId 176637328676799); 27/10/2026 Reel pegar peso → "Lofi Street" · bbox (audioId 544713431841568)
 - PEDIR revisão e autorização explícita: "Revisou? Posso agendar para [data/hora] em [redes]?"
 - NUNCA agendar (Metricool) nem publicar (GMB/Windsor) sem "sim" explícito do Rafael para aquele post
 
