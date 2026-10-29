@@ -1,6 +1,7 @@
 #!/bin/bash
 # Setup script do ambiente na nuvem (Claude Code).
-# Copie este conteudo em: menu do ambiente > Edit > Setup script.
+# Cole o CONTEUDO INTEIRO deste arquivo em: menu do ambiente > Edit > Setup script.
+# Nao use "bash scripts/setup-ambiente.sh": o setup roda antes do repositorio existir.
 # Instala as skills de video/animacao/som em ~/.claude/skills, para valer em
 # qualquer conversa e qualquer branch do ambiente. Falhas nao travam a sessao.
 mkdir -p ~/.claude/skills /opt/skills-src && cd /opt/skills-src
@@ -28,7 +29,6 @@ done
 pip install -q numpy scipy soundfile soxr librosa pyloudnorm scikit-learn pillow matplotlib 2>/dev/null || true
 pip install -q --no-deps /opt/skills-src/earshot 2>/dev/null || true
 
-# ghost-editor: transcricao (Whisper), rostos (OpenCV/MediaPipe), Gemini opcional
-# O modelo do Whisper baixa de openaipublic.azureedge.net: libere esse dominio na rede do ambiente.
-pip install -q openai-whisper opencv-python mediapipe google-genai 2>/dev/null || true
+# ghost-editor: Whisper/OpenCV/MediaPipe sao pesados (PyTorch) e ficam fora do setup
+# para nao atrasar toda sessao. Instale sob demanda na conversa que for editar video.
 exit 0
