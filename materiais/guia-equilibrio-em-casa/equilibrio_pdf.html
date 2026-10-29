@@ -1,0 +1,88 @@
+<html><head><meta charset="utf-8"><title>Equilíbrio em casa</title><link rel="stylesheet" href="local-fonts.css"><style>
+@page{size:A4;margin:0}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Montserrat,sans-serif;color:#1B3326;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:210mm;height:297mm;position:relative;overflow:hidden;background:#FBF7EF;page-break-after:always;padding:16mm 16mm 26mm}
+.page:last-child{page-break-after:auto}
+.hero{margin:-16mm -16mm 9mm;padding:14mm 16mm 11mm;background:radial-gradient(120% 120% at 15% 0%,#21402F 0%,#16291f 60%,#0F1E16 100%);color:#F4EEE3}
+.eb{font-weight:600;font-size:8.5pt;letter-spacing:.3em;text-transform:uppercase;color:#D9A441}
+.hero h1{font-family:Newsreader,serif;font-weight:500;font-size:40pt;line-height:1;margin-top:5mm}
+.hero h1 span{color:#E7BE6A}
+.hero p{font-size:12.5pt;line-height:1.5;color:#CFC8BA;margin-top:4mm;max-width:150mm}
+h2{font-family:Newsreader,serif;font-weight:500;font-size:22pt;line-height:1.15;color:#16291f;margin:0 0 3.5mm;display:flex;align-items:baseline;gap:3mm}
+h2 small{font-family:Montserrat;font-size:8pt;font-weight:600;letter-spacing:.25em;color:#B5862E;text-transform:uppercase}
+section{margin-bottom:9mm}
+.rule{width:16mm;height:.8mm;background:#D9A441;margin-bottom:3mm}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5mm 6mm}
+.g3{grid-template-columns:1fr 1fr 1fr}
+.it{display:flex;gap:3mm;align-items:flex-start}
+.b{flex:none;width:7.5mm;height:7.5mm;border-radius:50%;background:#16291f;color:#E7BE6A;font-family:Newsreader;font-size:10pt;display:flex;align-items:center;justify-content:center;margin-top:.3mm}
+.it h3{font-size:12pt;font-weight:700;line-height:1.25;color:#16291f}
+.it p{font-size:11pt;line-height:1.45;color:#3A5245;margin-top:.8mm}
+.box{background:#16291f;color:#F4EEE3;border-radius:4mm;padding:6mm 7mm}
+.box h2{color:#F4EEE3}.box h2 span{color:#E7BE6A}
+.box .it h3{color:#F4EEE3}.box .it p{color:#CFC8BA}.box .b{background:#D9A441;color:#16291f}
+.chips{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5mm;margin-top:3mm}
+.chips div{background:#EFE6D6;border:1px solid #D9C9B0;border-radius:3mm;padding:3.5mm 4mm;font-size:11.5pt;font-weight:600;color:#16291f}
+.alert{border:1.2px solid #B5683B;border-radius:4mm;padding:6mm 7mm;background:#FBF1EA}
+.alert h2{color:#8E4A22}.alert .b{background:#B5683B;color:#fff}
+.sos{margin-top:4mm;background:#B5683B;color:#fff;font-weight:700;font-size:10.5pt;padding:3mm 5mm;border-radius:10mm;display:inline-block}
+.intro{font-size:11.5pt;line-height:1.5;color:#3A5245;margin-bottom:3mm}
+.close{display:flex;gap:6mm;align-items:center;margin-top:2mm}
+.close h3{font-family:Newsreader;font-weight:500;font-size:17pt;line-height:1.15}
+.close h3 span{color:#B5862E}
+.close p{font-size:11pt;color:#3A5245;margin-top:1.5mm;line-height:1.45}
+.foot{position:absolute;left:0;right:0;bottom:0;height:17mm;background:#16291f;display:flex;align-items:center;padding:0 16mm;gap:3mm;color:#F4EEE3}
+.logo{width:9mm;height:9mm;background:#D9A441;-webkit-mask:url(logo.png) center/contain no-repeat;mask:url(logo.png) center/contain no-repeat}
+.brand{font-family:Newsreader;font-size:15pt}.brand b{font-weight:400;color:#E7BE6A}
+.cred{margin-left:auto;font-size:8pt;letter-spacing:.05em;color:#CFC8BA}.cred span{color:#D9A441;margin:0 2mm}
+.pg{position:absolute;right:16mm;bottom:20mm;font-family:Newsreader;font-size:9pt;letter-spacing:.2em;color:#9A7A45}
+.src{font-size:7.5pt;line-height:1.5;color:#6B7A70;border-top:1px solid #D9C9B0;padding-top:3mm;margin-top:5mm}
+
+.lvl{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-top:2mm}
+.lv{background:#fff;border:1px solid #D9C9B0;border-radius:4mm;padding:4mm;text-align:center}
+.lv svg{width:100%;height:20mm}
+.lv h3{font-size:11.5pt;font-weight:700;color:#16291f;margin-top:2mm}
+.lv p{font-size:9.5pt;color:#3A5245;line-height:1.35;margin-top:1mm}
+.lv .k{font-family:Newsreader;color:#B5862E;font-size:10pt;letter-spacing:.15em}
+.prog{display:flex;gap:2mm;align-items:center;margin-top:4mm;flex-wrap:wrap}
+.prog div{background:#16291f;color:#F4EEE3;border-radius:8mm;padding:2.2mm 4.5mm;font-size:10.5pt;font-weight:600}
+.prog span{color:#B5862E;font-weight:700}
+.ck{display:grid;grid-template-columns:1fr;gap:3.5mm;margin-top:2mm}
+.ck>div{display:flex;gap:4mm;align-items:flex-start;font-size:12pt;line-height:1.4;color:#1B3326}
+.ck i{flex:none;width:6.5mm;height:6.5mm;border:1.5px solid #16291f;border-radius:1.5mm;margin-top:.5mm}
+.ck b{display:block;font-size:12pt}
+.ck small{font-size:10.5pt;color:#3A5245}
+.wa{display:inline-block;margin-top:4mm;background:#D9A441;color:#16291f;font-weight:700;font-size:12pt;padding:3.5mm 7mm;border-radius:10mm;text-decoration:none}
+</style></head><body><div class="page">
+<div class="hero"><div class="eb">Guia gratuito · Ampar.fisio</div><h1>Equilíbrio <span>em casa.</span></h1>
+<p>Um teste rápido, 3 exercícios simples e um checklist para deixar a casa mais segura. Equilíbrio se treina, em qualquer idade.</p></div>
+<section><h2>Teste de equilíbrio em 4 níveis <small>10 s cada</small></h2><div class="rule"></div>
+<p class="intro">Fique ao lado da pia, com alguém por perto. Tente ficar 10 segundos em cada posição, sem mexer os pés e sem se apoiar. Só passe para o próximo nível se completar o anterior.</p>
+<div class="lvl"><div class="lv"><svg viewBox="0 0 100 70"><ellipse cx="42" cy="40" rx="5" ry="11" fill="#16291f"/><ellipse cx="56" cy="40" rx="5" ry="11" fill="#16291f"/></svg><div class="k">Nível 1</div><h3>Pés juntos</h3><p>Um ao lado do outro.</p></div><div class="lv"><svg viewBox="0 0 100 70"><ellipse cx="44" cy="44" rx="5" ry="11" fill="#16291f"/><ellipse cx="56" cy="34" rx="5" ry="11" fill="#16291f"/></svg><div class="k">Nível 2</div><h3>Meio passo</h3><p>Um pé um pouco à frente, encostado no outro.</p></div><div class="lv"><svg viewBox="0 0 100 70"><ellipse cx="50" cy="52" rx="5" ry="11" fill="#16291f"/><ellipse cx="50" cy="29" rx="5" ry="11" fill="#16291f"/></svg><div class="k">Nível 3</div><h3>Um na frente do outro</h3><p>Calcanhar encostado nos dedos do outro pé.</p></div><div class="lv"><svg viewBox="0 0 100 70"><ellipse cx="50" cy="40" rx="5" ry="11" fill="#16291f"/><ellipse cx="66" cy="34" rx="5" ry="11" fill="none" stroke="#B5862E" stroke-dasharray="2 2"/></svg><div class="k">Nível 4</div><h3>Uma perna só</h3><p>Apoio em um pé.</p></div></div>
+<p class="intro" style="margin-top:4mm"><b>Não conseguiu ficar 10 s no nível 3?</b> Isso indica maior risco de queda e vale uma avaliação com fisioterapeuta.</p></section>
+<section><h2>3 exercícios na pia <small>Quase todos os dias</small></h2><div class="rule"></div>
+<div class="grid g3">
+<div class="it"><div class="b">1</div><div><h3>Ponta dos pés</h3><p>Suba devagar na ponta dos pés e desça devagar. 10 vezes.</p></div></div>
+<div class="it"><div class="b">2</div><div><h3>Um pé na frente do outro</h3><p>Fique 20 segundos. Troque o pé da frente e repita.</p></div></div>
+<div class="it"><div class="b">3</div><div><h3>Uma perna só</h3><p>Fique 20 segundos em cada perna.</p></div></div></div>
+<p class="intro" style="margin-top:5mm;margin-bottom:0"><b>Progressão das mãos:</b> só avance quando fizer com firmeza, sem se desequilibrar.</p>
+<div class="prog"><div>2 mãos na pia</div><span>›</span><div>1 mão</div><span>›</span><div>1 dedo</div><span>›</span><div>Sem as mãos</div></div></section>
+<div class="pg">01 / 02</div><div class="foot"><div class="logo"></div><div class="brand">Ampar<b>.fisio</b></div><div class="cred">Dr. Rafael Lima<span>|</span>Fisioterapeuta · CREFITO 3 · 329642</div></div></div><div class="page" style="padding-top:18mm">
+<section><h2>Checklist da casa segura <small>Marque o que já fez</small></h2><div class="rule"></div>
+<div class="ck">
+<div><i></i><div><b>Tapetes</b><small>Tire os tapetes soltos ou fixe com antiderrapante.</small></div></div>
+<div><i></i><div><b>Luz no caminho do banheiro</b><small>Deixe uma luz ou abajur aceso à noite, do quarto até o banheiro.</small></div></div>
+<div><i></i><div><b>Barra no box</b><small>Barra de apoio e tapete antiderrapante no banho.</small></div></div>
+<div><i></i><div><b>Chinelo que segura o calcanhar</b><small>Evite chinelo solto, que escapa do pé.</small></div></div>
+<div><i></i><div><b>Objetos entre a cintura e o ombro</b><small>O que se usa todo dia sem precisar subir em banquinho nem se abaixar muito.</small></div></div>
+</div></section>
+<div class="alert" style="margin-top:2mm"><h2>Antes de começar</h2>
+<p class="intro" style="margin:2mm 0 0;color:#5A3A22">Este teste é uma <b>triagem, não um diagnóstico</b>. Faça sempre perto de um apoio firme e com alguém por perto. Se sentir tontura, dor no peito ou falta de ar, pare e procure atendimento.</p></div>
+<section style="margin-top:9mm"><div class="box close"><div>
+<h3 style="color:#F4EEE3">Quer saber como está o equilíbrio de quem você ama? <span style="color:#E7BE6A">Eu avalio em casa.</span></h3>
+<p style="color:#CFC8BA">Fisioterapia domiciliar na Zona Norte de SP.</p>
+<a class="wa" href="https://wa.me/WHATSAPP_AQUI">Fale comigo no WhatsApp</a>
+<p style="color:#E7BE6A;font-weight:600;margin-top:4mm">Dr. Rafael Lima · Fisioterapeuta · CREFITO 3 · 329642 · @fisiorafaellima</p></div></div></section>
+<div class="src">Referências: CDC STEADI, Teste de equilíbrio em 4 etapas. Sherrington C et al., Exercise for preventing falls in older people living in the community, Cochrane Database of Systematic Reviews, 2019 (exercícios de equilíbrio e funcionais reduziram a taxa de quedas em 24%).</div>
+<div class="pg">02 / 02</div><div class="foot"><div class="logo"></div><div class="brand">Ampar<b>.fisio</b></div><div class="cred">Dr. Rafael Lima<span>|</span>Fisioterapeuta · CREFITO 3 · 329642</div></div></div></body></html>
