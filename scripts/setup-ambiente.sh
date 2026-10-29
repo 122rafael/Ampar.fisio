@@ -12,6 +12,8 @@ pega remotion-dev/skills             remotion
 pega greensock/gsap-skills           gsap
 pega diffusionstudio/lottie          lottie
 pega iart-ai/motion-design-skills    iart
+# ghost-editor precisa ficar exatamente em ~/.claude/skills/ghost-editor
+[ -d ~/.claude/skills/ghost-editor ] || git clone -q --depth 1 https://github.com/kurbaitaev/ghost-editor ~/.claude/skills/ghost-editor 2>/dev/null || true
 
 cp -r earshot/skills/*             ~/.claude/skills/ 2>/dev/null || true
 cp -r motion/skill/motion-design   ~/.claude/skills/ 2>/dev/null || true
@@ -25,4 +27,8 @@ done
 # Earshot: so a parte de efeitos sonoros (sem torch/transformers)
 pip install -q numpy scipy soundfile soxr librosa pyloudnorm scikit-learn pillow matplotlib 2>/dev/null || true
 pip install -q --no-deps /opt/skills-src/earshot 2>/dev/null || true
+
+# ghost-editor: transcricao (Whisper), rostos (OpenCV/MediaPipe), Gemini opcional
+# O modelo do Whisper baixa de openaipublic.azureedge.net: libere esse dominio na rede do ambiente.
+pip install -q openai-whisper opencv-python mediapipe google-genai 2>/dev/null || true
 exit 0

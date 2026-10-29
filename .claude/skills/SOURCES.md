@@ -12,6 +12,7 @@ Copiadas dos repositórios originais em 2026-10-18 (pastas `evals/` removidas).
 | biblioteca-prompts-video (videos.json) | https://github.com/yihui-dev/awesome-opus5-5-videos (adicionada em 2026-10-19) | MIT |
 | motion-design | https://github.com/howseen-ai/claude-motion-design (adicionada em 2026-10-22) | MIT |
 | earshot, real-sound | https://github.com/Leonxlnx/earshot (adicionadas em 2026-10-26) | MIT |
+| ghost-editor | https://github.com/kurbaitaev/ghost-editor (adicionada em 2026-10-29) | MIT |
 
 O script `scripts/setup-ambiente.sh` instala estas skills (e o Earshot) em `~/.claude/skills` de qualquer conversa do ambiente na nuvem.
 
