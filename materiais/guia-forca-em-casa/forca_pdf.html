@@ -1,0 +1,87 @@
+<html><head><meta charset="utf-8"><title>Força em casa</title><link rel="stylesheet" href="local-fonts.css"><style>
+@page{size:A4;margin:0}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Montserrat,sans-serif;color:#1B3326;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:210mm;height:297mm;position:relative;overflow:hidden;background:#FBF7EF;page-break-after:always;padding:16mm 16mm 26mm}
+.page:last-child{page-break-after:auto}
+.hero{margin:-16mm -16mm 7mm;padding:12mm 16mm 9mm;background:radial-gradient(120% 120% at 15% 0%,#21402F 0%,#16291f 60%,#0F1E16 100%);color:#F4EEE3}
+.eb{font-weight:600;font-size:8.5pt;letter-spacing:.3em;text-transform:uppercase;color:#D9A441}
+.hero h1{font-family:Newsreader,serif;font-weight:500;font-size:40pt;line-height:1;margin-top:5mm}
+.hero h1 span{color:#E7BE6A}
+.hero p{font-size:12.5pt;line-height:1.5;color:#CFC8BA;margin-top:4mm;max-width:150mm}
+h2{font-family:Newsreader,serif;font-weight:500;font-size:22pt;line-height:1.15;color:#16291f;margin:0 0 3.5mm;display:flex;align-items:baseline;gap:3mm}
+h2 small{font-family:Montserrat;font-size:8pt;font-weight:600;letter-spacing:.25em;color:#B5862E;text-transform:uppercase}
+section{margin-bottom:9mm}
+.rule{width:16mm;height:.8mm;background:#D9A441;margin-bottom:3mm}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5mm 6mm}
+.g3{grid-template-columns:1fr 1fr 1fr}
+.it{display:flex;gap:3mm;align-items:flex-start}
+.b{flex:none;width:7.5mm;height:7.5mm;border-radius:50%;background:#16291f;color:#E7BE6A;font-family:Newsreader;font-size:10pt;display:flex;align-items:center;justify-content:center;margin-top:.3mm}
+.it h3{font-size:12pt;font-weight:700;line-height:1.25;color:#16291f}
+.it p{font-size:11pt;line-height:1.45;color:#3A5245;margin-top:.8mm}
+.box{background:#16291f;color:#F4EEE3;border-radius:4mm;padding:6mm 7mm}
+.box h2{color:#F4EEE3}.box h2 span{color:#E7BE6A}
+.box .it h3{color:#F4EEE3}.box .it p{color:#CFC8BA}.box .b{background:#D9A441;color:#16291f}
+.chips{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5mm;margin-top:3mm}
+.chips div{background:#EFE6D6;border:1px solid #D9C9B0;border-radius:3mm;padding:3.5mm 4mm;font-size:11.5pt;font-weight:600;color:#16291f}
+.alert{border:1.2px solid #B5683B;border-radius:4mm;padding:6mm 7mm;background:#FBF1EA}
+.alert h2{color:#8E4A22}.alert .b{background:#B5683B;color:#fff}
+.sos{margin-top:4mm;background:#B5683B;color:#fff;font-weight:700;font-size:10.5pt;padding:3mm 5mm;border-radius:10mm;display:inline-block}
+.intro{font-size:11.5pt;line-height:1.5;color:#3A5245;margin-bottom:3mm}
+.close{display:flex;gap:6mm;align-items:center;margin-top:2mm}
+.close h3{font-family:Newsreader;font-weight:500;font-size:17pt;line-height:1.15}
+.close h3 span{color:#B5862E}
+.close p{font-size:11pt;color:#3A5245;margin-top:1.5mm;line-height:1.45}
+.foot{position:absolute;left:0;right:0;bottom:0;height:17mm;background:#16291f;display:flex;align-items:center;padding:0 16mm;gap:3mm;color:#F4EEE3}
+.logo{width:9mm;height:9mm;background:#D9A441;-webkit-mask:url(logo.png) center/contain no-repeat;mask:url(logo.png) center/contain no-repeat}
+.brand{font-family:Newsreader;font-size:15pt}.brand b{font-weight:400;color:#E7BE6A}
+.cred{margin-left:auto;font-size:8pt;letter-spacing:.05em;color:#CFC8BA}.cred span{color:#D9A441;margin:0 2mm}
+.pg{position:absolute;right:16mm;bottom:20mm;font-family:Newsreader;font-size:9pt;letter-spacing:.2em;color:#9A7A45}
+.src{font-size:7.5pt;line-height:1.5;color:#6B7A70;border-top:1px solid #D9C9B0;padding-top:3mm;margin-top:5mm}
+
+.lvl{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-top:2mm}
+.lv{background:#fff;border:1px solid #D9C9B0;border-radius:4mm;padding:4mm;text-align:center}
+.lv svg{width:100%;height:20mm}
+.lv h3{font-size:11.5pt;font-weight:700;color:#16291f;margin-top:2mm}
+.lv p{font-size:9.5pt;color:#3A5245;line-height:1.35;margin-top:1mm}
+.lv .k{font-family:Newsreader;color:#B5862E;font-size:10pt;letter-spacing:.15em}
+.prog{display:flex;gap:2mm;align-items:center;margin-top:4mm;flex-wrap:wrap}
+.prog div{background:#16291f;color:#F4EEE3;border-radius:8mm;padding:2.2mm 4.5mm;font-size:10.5pt;font-weight:600}
+.prog span{color:#B5862E;font-weight:700}
+.ck{display:grid;grid-template-columns:1fr;gap:3.5mm;margin-top:2mm}
+.ck>div{display:flex;gap:4mm;align-items:flex-start;font-size:12pt;line-height:1.4;color:#1B3326}
+.ck i{flex:none;width:6.5mm;height:6.5mm;border:1.5px solid #16291f;border-radius:1.5mm;margin-top:.5mm}
+.ck b{display:block;font-size:12pt}
+.ck small{font-size:10.5pt;color:#3A5245}
+.wa{display:inline-block;margin-top:4mm;background:#D9A441;color:#16291f;font-weight:700;font-size:12pt;padding:3.5mm 7mm;border-radius:10mm;text-decoration:none}
+
+.ex{display:grid;grid-template-columns:1fr;gap:3mm;margin-top:2mm}
+.exc{display:flex;gap:5mm;background:#fff;border:1px solid #D9C9B0;border-radius:4mm;padding:3.5mm 5mm;align-items:flex-start}
+.exc .num{flex:none;width:12mm;height:12mm;border-radius:50%;background:#16291f;color:#E7BE6A;font-family:Newsreader;font-size:18pt;display:flex;align-items:center;justify-content:center}
+.exc h3{font-size:13.5pt;font-weight:700;color:#16291f}
+.exc h3 span{font-weight:600;color:#B5862E;font-size:11pt;margin-left:2mm}
+.exc p{font-size:11pt;line-height:1.45;color:#3A5245;margin-top:1.2mm}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin-top:0}
+.mini{border-radius:4mm;padding:5mm 6mm}
+.mini h4{font-family:Newsreader;font-weight:500;font-size:15pt;margin-bottom:1.5mm}
+.mini p{font-size:10.5pt;line-height:1.45}
+</style></head><body><div class="page">
+<div class="hero"><div class="eb">Guia gratuito · Ampar.fisio</div><h1>Força <span>em casa.</span></h1>
+<p>3 exercícios sem equipamento para começar a fortalecer o corpo. Força é o que mantém você independente, em qualquer idade.</p></div>
+<section style="margin-bottom:5mm"><h2>Faça 2 ou 3 vezes por semana <small>10 repetições cada</small></h2><div class="rule"></div>
+<div class="ex">
+<div class="exc"><div class="num">1</div><div><h3>Sentar e levantar da cadeira <span>10x</span></h3><p>Cadeira firme, encostada na parede. Pés no chão, um pouco afastados. Levante e sente devagar. No começo, pode usar as mãos; depois, tente com os braços cruzados.</p></div></div>
+<div class="exc"><div class="num">2</div><div><h3>Ponte de quadril <span>10x</span></h3><p>Deitado de barriga para cima, joelhos dobrados e pés apoiados. Suba o quadril, segure 2 segundos e desça devagar.</p></div></div>
+<div class="exc"><div class="num">3</div><div><h3>Flexão na parede <span>10x</span></h3><p>De frente para a parede, mãos na altura dos ombros e um passo para trás. Dobre os cotovelos aproximando o peito da parede e empurre de volta.</p></div></div>
+</div></section>
+<div class="row">
+<div class="mini" style="background:#FBF1EA;border:1.2px solid #B5683B"><h4 style="color:#8E4A22">Se doer, pare.</h4><p style="color:#5A3A22">Desconforto leve é normal. Dor forte, que piora ou não passa, é sinal para parar e procurar avaliação. Faça devagar e sem prender a respiração.</p></div>
+<div class="mini" style="background:#16291f;color:#F4EEE3"><h4 style="color:#E7BE6A">O que a OMS recomenda</h4><p style="color:#CFC8BA">Exercícios de fortalecimento <b style="color:#F4EEE3">2 ou mais dias por semana</b>, para adultos e também para idosos.</p><p style="color:#9FB3A4;font-size:8.5pt;margin-top:2mm">Fonte: Diretrizes da OMS para atividade física e comportamento sedentário, 2020.</p></div>
+</div>
+<section style="margin-top:5mm;margin-bottom:0"><div class="box close"><div>
+<h3 style="color:#F4EEE3">Quer um plano de força feito para você? <span style="color:#E7BE6A">Eu monto em casa.</span></h3>
+<p style="color:#CFC8BA">Fisioterapia domiciliar na Zona Norte de SP.</p>
+<a class="wa" href="https://wa.me/5511988791599">Fale comigo no WhatsApp</a>
+<p style="color:#E7BE6A;font-weight:600;margin-top:3mm">Dr. Rafael Lima · Fisioterapeuta · CREFITO 3 · 329642 · @fisiorafaellima</p></div></div></section>
+
+<div class="foot"><div class="logo"></div><div class="brand">Ampar<b>.fisio</b></div><div class="cred">Dr. Rafael Lima<span>|</span>Fisioterapeuta · CREFITO 3 · 329642</div></div></div></body></html>
