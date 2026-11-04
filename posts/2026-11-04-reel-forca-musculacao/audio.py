@@ -7,7 +7,7 @@ def wt(seg,w):
     return OFF[seg]
 S='../sfx3/'; ev=[]
 def e(n,t,v,d=None): ev.append((n,max(0,t),v,d))
-e('boom',0.0,0.4); e('whoosh_b',0.1,0.3); e('hit',0.85,0.45)
+e('boom',0.0,0.4); e('hit',0.3,0.4); e('whoosh_b',1.5-0.47,0.35); e('hit',1.5+0.85,0.4)
 W={'s2':'whoosh_deep','s3':'whoosh_a','s4':'whoosh_b','s5':'whoosh_a','s6':'whoosh_deep','s7':'whoosh_b'}
 PK={'whoosh_a':0.71,'whoosh_b':0.47,'whoosh_deep':0.49}
 for n,w in W.items(): e(w,OFF[n]-PK[w],0.35)

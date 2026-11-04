@@ -211,7 +211,28 @@ def meter(img,label,val,t0,t,x=W-330,y=560,good_down=True,col=None):
     img.alpha_composite(lay,(x,y))
 
 # ---------------- scenes ----------------
+PAT=None
+PATD=1.5
 def sc_hook(img,t,lt,dur):
+    global PAT
+    if PAT is None:
+        import cv2
+        cap=cv2.VideoCapture('work/pat.mp4'); PAT=[]
+        while True:
+            ok,fr=cap.read()
+            if not ok: break
+            PAT.append(cv2.cvtColor(fr,cv2.COLOR_BGR2RGB))
+    if lt<PATD:
+        fr=PAT[min(len(PAT)-1,int(lt*FPS))]
+        z=1.0+0.04*lt
+        pim=Image.fromarray(fr).resize((int(W*z),int(H*z)),Image.BILINEAR).crop((int(W*(z-1)/2),int(H*(z-1)/2),int(W*(z-1)/2)+W,int(H*(z-1)/2)+H)).convert('RGBA')
+        img.paste(pim,(0,0))
+        lay=Image.new('RGBA',(W,H),(0,0,0,0)); ImageDraw.Draw(lay).rectangle((0,0,W,420),fill=(0,0,0,90)); img.alpha_composite(lay.filter(ImageFilter.GaussianBlur(60)))
+        title(img,'O que a musculação faz por dentro',0.0,t,y=200,size=50)
+        if lt>PATD-0.25:
+            v=(lt-(PATD-0.25))/0.25; fl=Image.new('RGBA',(W,H),(255,255,255,int(160*v))); img.alpha_composite(fl)
+        return
+    lt=lt-PATD; dur=dur-PATD
     # squat -> stand in first second, then idle subtle, zoom to knee at end
     u=eio(lt/0.9)
     shin=lerp(38,6,u); thigh=lerp(78,4,u)
