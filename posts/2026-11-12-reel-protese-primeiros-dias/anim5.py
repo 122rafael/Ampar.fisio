@@ -25,8 +25,9 @@ def shadow(lay,r=14,a=0.75):
 # ---------------- timeline ----------------
 SEG=[('s1',1.87,7.92,'Ela colocou a prótese há poucos dias. Olha o que a gente já treina.',(1.97,7.82)),
      ('s2',12.09,20.11,'Inchaço e dor são esperados no começo. Mexer cedo, com orientação, ajuda a recuperar o movimento.',(12.19,20.01)),
-     ('s3',20.73,27.32,'O objetivo da fase é dobrar, esticar e andar com segurança.',(20.83,27.22)),
-     ('s4',28.08,35.40,'Alguém da família vai operar? Me manda JOELHO que eu te mando o guia da recuperação.',(28.18,35.00))]
+     ('s3',20.73,22.45,'O objetivo da fase',(20.83,22.39)),
+     ('s3b',23.22,27.32,'é dobrar, esticar e andar com segurança.',(23.30,27.22)),
+     ('s4',29.20,35.40,'Alguém da família vai operar? Me manda JOELHO que eu te mando o guia da recuperação.',(29.30,35.00))]
 OFF={}; t=0
 for n,a,b,_,_ in SEG: OFF[n]=t; t+=b-a
 TOTAL=t
@@ -532,16 +533,32 @@ def board_explain(t,lt):
     B.stroke(PAT,at(1.2),0.4,t,seed=5)
     B.stroke(FEMCOMP,at(1.45),0.5,t,col=GOLDI,w=12,seed=6); B.stroke(INSERT,at(1.85),0.25,t,col=(150,150,150),w=10,seed=7)
     B.stroke(TRAY,at(2.0),0.3,t,col=GOLDI,w=12,seed=8); B.stroke(STEM,at(2.2),0.25,t,col=GOLDI,w=12,seed=9)
-    B.text('prótese',at(2.4),t,(KX+150,KY+130),size=62,col=GOLDI)
+    pa=ease((t-at(1.7))/0.5)
+    if pa>0:
+        crest=arc(KX,KY-55,130,100,170,10,40)+arc(KX,KY-55,104,78,10,170,40)
+        B.fill(crest,pa,(196,202,212)); B.fill(arc(KX,KY-58,124,94,150,30,20)+arc(KX,KY-58,114,86,30,150,20),pa*0.9,(240,244,250))
+        B.fill([(KX-100,KY+38),(KX+100,KY+38),(KX+100,KY+56),(KX-100,KY+56)],pa,(232,238,248))
+        B.fill([(KX-112,KY+58),(KX+112,KY+58),(KX+112,KY+76),(KX-112,KY+76)],pa,(186,192,204))
+        B.fill([(KX-16,KY+76),(KX+16,KY+76),(KX+10,KY+150),(KX-10,KY+150)],pa,(186,192,204))
+        B.stroke(crest+[crest[0]],at(1.7),0.01,t,col=(110,116,128),w=4,seed=60)
+    tl_=at(2.35)
+    if t>=tl_:
+        u=ease((t-tl_)/0.3)
+        B.stroke(line((KX+130,KY-40),(600,40)),tl_,0.3,t,col=GOLDI,w=6,seed=61)
+        B.stroke(line((KX+115,KY+66),(600,40)),tl_+0.1,0.3,t,col=GOLDI,w=6,seed=62)
+        if u>0.6:
+            B.d.rounded_rectangle((600,0,940,86),radius=20,fill=GOLD+(255,))
+            B.d.text((770,44),'PRÓTESE',font=fk(52,800),fill=DARK,anchor='mm')
+        B.text('metal + plástico',tl_+0.4,t,(612,128),size=50,col=(110,116,128),cps=26)
     ti=wt('s2','inchaço')-0.2
     if t>=ti:
         a=ease((t-ti-0.8)/0.6); B.fill(SWELL,0.12*a,(120,170,215))
         B.stroke(SWELL,ti,0.8,t,col=BLUEI,w=6,seed=10)
-        B.text('inchaço',ti+0.6,t,(640,110),size=64,col=BLUEI)
+        B.text('inchaço',ti+0.6,t,(640,230),size=64,col=BLUEI)
     td=wt('s2','dor')-0.1
     B.stroke(ZIG,td,0.35,t,col=REDI,w=8,seed=11); B.text('dor',td+0.3,t,(40,KY-230),size=64,col=REDI)
     te=wt('s2','esperados')
-    B.text('esperados no começo',te,t,(640,190),size=54,col=INK,cps=22)
+    B.text('esperados no começo',te,t,(640,300),size=54,col=INK,cps=22)
     tm=wt('s2','mexer')-0.1
     if t>=tm:
         B.stroke(BENDARC,tm,0.6,t,col=GOLDI,w=8,seed=12)
@@ -555,7 +572,7 @@ def board_goals(t,lt):
     B=Board(); T0=OFF['s3']
     B.text('Objetivos desta fase',T0+0.05,t,(W/2,90),size=74,col=INK,cps=24,anchor='mm')
     B.stroke(line((300,140),(780,140)),T0+0.7,0.4,t,col=GOLDI,w=6,seed=20)
-    items=[('dobrar',wt('s3','dobrar')),('esticar',wt('s3','esticar')),('andar com segurança',wt('s3','andar'))]
+    items=[('dobrar',wt('s3b','dobrar')),('esticar',wt('s3b','esticar')),('andar com segurança',wt('s3b','andar'))]
     for i,(lab,tk) in enumerate(items):
         y=210+i*155; tk=tk-0.25
         box=[(120,y-45),(210,y-45),(210,y+45),(120,y+45),(120,y-45)]
@@ -594,7 +611,7 @@ def sc1(img,t,lt,dur):
         l=Image.new('RGBA',(W,H),(0,0,0,0)); dd=ImageDraw.Draw(l)
         u=ease((t-tp)/0.6); pts=partial(jitter(arc(400,780,170,130,200,560,60),2,3),u)
         if len(pts)>1: dd.line(pts,fill=GOLD+(255,),width=10,joint='curve')
-        if u>=1: dd.text((560,640),'joelho operado',font=hfont(78),fill=GOLD2+(255,),anchor='lm')
+        if u>=1: dd.text((560,630),'joelho com prótese',font=hfont(78),fill=GOLD2+(255,),anchor='lm')
         img.alpha_composite(shadow(l,8,0.5))
 def sc2(img,t,lt,dur):
     B=board_explain(t,lt); split(img,t,B,6.05+lt); tag(img,'Fase inicial · pós-operatório',y=20)
@@ -626,14 +643,15 @@ def sc4(img,t,lt,dur):
         if lt>ty+1.3:
             v=ease((lt-ty-1.3)/0.3); c=CART.copy(); c.putalpha(c.getchannel('A').point(lambda a:int(a*v)))
             img.alpha_composite(c,(sx+60,sy+290))
-SC={'s1':sc1,'s2':sc2,'s3':sc3,'s4':sc4}
+def sc3b(img,t,lt,dur): sc3(img,t,t-OFF['s3'],dur)
+SC={'s1':sc1,'s2':sc2,'s3':sc3,'s3b':sc3b,'s4':sc4}
 DUR={n:b-a for n,a,b,_,_ in SEG}
 
 def frame(t):
     img=background(t); n=seg_at(t); lt=t-OFF[n]
     SC[n](img,t,lt,DUR[n])
     # loop: last 0.35s blend toward hook start
-    caption(img,t,y=(915 if n in ('s2','s3') else 1650))
+    caption(img,t,y=(915 if n in ('s2','s3','s3b') else 1650))
     lay=Image.new('RGBA',(W,12),(0,0,0,0)); d=ImageDraw.Draw(lay); d.rectangle((0,0,W,6),fill=(255,255,255,50)); d.rectangle((0,0,W*t/TOTAL,6),fill=GOLD+(230,)); img.alpha_composite(lay)
     rgb=np.array(img.convert('RGB')).astype(np.float32)
     dt=min(abs(t-OFF[k]) for k in OFF if OFF[k]>0)
@@ -648,7 +666,7 @@ if __name__=='__main__':
     frame0=Image.fromarray(np.zeros((H,W,3),np.uint8)); frame0=Image.fromarray(frame(0.0))
     pts=[float(x) for x in sys.argv[1].split(',')] if PREVIEW else None
     proc=None
-    if not PREVIEW: proc=subprocess.Popen(['ffmpeg','-v','error','-y','-f','rawvideo','-pix_fmt','rgb24','-s',f'{W}x{H}','-r',str(FPS),'-i','-','-c:v','libx264','-preset','medium','-crf','19','-pix_fmt','yuv420p','work/video5.mp4'],stdin=subprocess.PIPE)
+    if not PREVIEW: proc=subprocess.Popen(['ffmpeg','-v','error','-y','-f','rawvideo','-pix_fmt','rgb24','-s',f'{W}x{H}','-r',str(FPS),'-i','-','-c:v','libx264','-preset','medium','-crf','19','-pix_fmt','yuv420p','work/video5b.mp4'],stdin=subprocess.PIPE)
     N=int(round(TOTAL*FPS))
     for fi in range(N):
         t=fi/FPS
