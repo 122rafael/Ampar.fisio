@@ -1,0 +1,1 @@
+Origem: https://github.com/bangtutorial/bang-motion (MIT), commit c1aa65e, copiado em 2026-11-18. Galeria e icon.png omitidos.
